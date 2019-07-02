@@ -1,0 +1,16 @@
+{
+    "name": "hexters/esms-notification-channel",
+    "description": "Laravel notification channel for https://esms.com.my",
+    "authors": [
+        {
+            "name": "saifullah",
+            "email": "hexters@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hexters\\Esms\\": "src/"
+        }
+    }
+}
