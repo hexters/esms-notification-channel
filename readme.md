@@ -1,5 +1,5 @@
 # ESMS Notification Channel for Laravel
-How to use the Esms chanel? firs you need to create  account from the https://esms.com.my 
+How to use the Esms channel? firs you need to create  account from the https://esms.com.my 
 
 
 Install the package with composer
