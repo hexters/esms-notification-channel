@@ -1,6 +1,8 @@
 {
     "name": "hexters/esms-notification-channel",
     "description": "Laravel notification channel for https://esms.com.my",
+    "keywords": ["SMS", "ESMS", "SMS Gateway", "Message"],
+    "license": "MIT",
     "authors": [
         {
             "name": "saifullah",
