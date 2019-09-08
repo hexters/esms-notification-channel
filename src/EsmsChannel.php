@@ -21,7 +21,7 @@ class EsmsChannel
         return;
       }
 
-        $message = $notification->toVoice($notifiable);
+        $message = $notification->toEsms($notifiable);
 
         if(is_string($message)) {
           $message = new EsmsMessage($message);
