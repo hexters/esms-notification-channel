@@ -1,5 +1,7 @@
 <?php 
-
+  
+  namespace Hexters\Esms;
+  
   class EsmsMessage {
 
     public $content;
