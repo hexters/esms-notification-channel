@@ -4,7 +4,7 @@ namespace Hexters\Esms;
 
 use Illuminate\Notifications\Notification;
 
-use Hexters\Esms\EsmsMessage;
+use Hexters\Esms\EsmsMessage as SendMessage;
 
 class EsmsChannel
 {
@@ -24,7 +24,7 @@ class EsmsChannel
         $message = $notification->toEsms($notifiable);
 
         if(is_string($message)) {
-          $message = new EsmsMessage($message);
+          $message = new SendMessage($message);
         }
 
         $params = http_build_query([
