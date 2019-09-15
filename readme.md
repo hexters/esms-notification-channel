@@ -13,7 +13,7 @@ ESMS_USER=
 ESMS_PASSWORD=
 ```
 
-set route notification in User class or our custome User class
+Set route notification in User class or our custom User class
 ```
 . . .
 
@@ -51,7 +51,7 @@ class InvoicePaid extends Notification {
 * @return array|string
 */
 public function via($notifiable) {
-    return [EsmsChannel::class];
+    return ['mail', EsmsChannel::class];
 }
 
 . . .
@@ -60,11 +60,24 @@ public function via($notifiable) {
 * Get the voice representation of the notification.
 *
 * @param  mixed  $notifiable
-* @return VoiceMessage
+* @return EsmsResponse
 */
 public function toEsms($notifiable) {
     return (new EsmsMessage)->content('Your SMS message content');
 }
+
+```
+## SMS Manualy
+
+If you will send SMS manualy, you can try
+```
+. . . 
+use Hexters\Esms\SendEsms;
+
+. . . 
+
+$sms = new sendEsms;
+$sms->to(608123481234)->message("RM0.00 Your OTP number is " . rand(1111,9999))->send();
 
 ```
 
