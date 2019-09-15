@@ -28,6 +28,6 @@ class EsmsChannel
           $message = new SendMessage($message);
         }
 
-        $send = (new BaseEsms)->to($to)->message($message->content);
+        $send = (new BaseEsms)->to($to)->message($message->content)->send();
     }
 }

@@ -9,15 +9,17 @@ class SendEsms {
 
   public function to($to) {
     $this->to = $to;
+    return $this;
   }
 
   public function message($msg) {
     $this->message = $msg;
+    return $this;
   }
 
   public function send() {
     if(empty($this->message)) {
-      return "Message cannot empty!";  
+      return "Message cannot empty!";
     }
 
     if(empty($this->to)) {
