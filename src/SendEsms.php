@@ -30,7 +30,7 @@ class SendEsms {
       'user' => env('ESMS_USER', ''),
       'pass' => env('ESMS_PASSWORD', ''),
       'to' => $this->to,
-      'msg' => trim($message->content)
+      'msg' => trim($this->message)
     ]);
     $esms = 'https://api.esms.com.my/sms/send?' . $params;
     return file_get_contents($esms);
