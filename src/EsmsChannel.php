@@ -5,6 +5,7 @@ namespace Hexters\Esms;
 use Illuminate\Notifications\Notification;
 
 use Hexters\Esms\EsmsMessage as SendMessage;
+use Hexters\Esms\SendEsms as BaseEsms;
 
 class EsmsChannel
 {
@@ -27,14 +28,6 @@ class EsmsChannel
           $message = new SendMessage($message);
         }
 
-        $params = http_build_query([
-          'user' => env('ESMS_USER', ''),
-          'pass' => env('ESMS_PASSWORD', ''),
-          'to' => $to,
-          'msg' => trim($message->content)
-        ]);
-        $esms = 'https://api.esms.com.my/sms/send?' . $params;
-        $send = file_get_contents($esms);
-        
+        $send = (new BaseEsms)->to($to)->message($message->content);
     }
 }
